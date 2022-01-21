@@ -47,6 +47,9 @@ img {
 header {
   width: 100%;
   background-color: var(--dark-grey);
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 nav {
@@ -73,7 +76,7 @@ nav {
   margin: 0 1.5rem;
 }
 
-.nav-list li a {
+li a {
   color: var(--white);
   font-size: 1.6rem;
   text-decoration: none;
@@ -103,4 +106,48 @@ h2 {
 
 .flex > * {
   margin: 3px;
+}
+
+/* ACTIVE CLASS */
+.active {
+  position: relative;
+}
+
+.active > * {
+  color: var(--color-sec);
+}
+
+.active::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 100%;
+  background-color: var(--white);
+}
+
+/* SCROLL TO TOP */
+
+.top {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: transparent;
+  padding: 1.5rem;
+  border: 1px solid var(--color-sec);
+  outline: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 111;
+  border-radius: 2rem;
+  opacity: 0;
+  transform: translateY(10rem);
+  transition: all .3s;
+}
+
+.show-btn {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .3s
 }
